@@ -9,6 +9,17 @@ The CFN template (EncryptedVolsToSlack.yaml) will stand up infrastructure in AWS
   a.	Retrieve an AWS Secrets Manager secret that contains the Slack URL and channel information.
   b.	Post the information to the Slack channel.
 
+## Prerequisites
+For the integration with Slack, follow these instructions to add a Slack Incoming Webhook. Choose a Slack channel to send information to and receive a URL with a prefix of https://hooks.slack.com/workflows/.... for posting the information. Save the information in AWS Secrets Manager secret with the following format:
+{
+  "URL": "TheSlackUrl",
+  "channel": "TheSlackChannel"
+}
+
+
+AWS Config must be enabled in your AWS account for your region, and must monitor at least EC2:Instance and EC2:Volume types. See [Getting Started with AWS Config](https://docs.aws.amazon.com/config/latest/developerguide/getting-started.html) for more info.
+
+
 
 ## Security
 
