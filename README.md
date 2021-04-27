@@ -1,5 +1,5 @@
 ## Use the power of script steps in your Systems Manager Automation runbooks
-The CFN template (EncryptedVolsToSlack.yaml) will stand up infrastructure in AWS Config, IAM, and Systems Manager to send information about unencrypted volumes to a Slack Channel. It showcases the Automation runbook action aws:executeScript in order to perform an API callss to AWS and Slack. 
+The CFN template (EncryptedVolsToSlack.yaml) will stand up infrastructure in AWS Config, IAM, and Systems Manager to send information about unencrypted volumes to a Slack Channel. It showcases the Automation runbook action aws:executeScript in order to perform an API calls to AWS and Slack. 
 
 ![Architecture Diagram](https://github.com/aws-samples/aws-systems-manager-executescript-slack/blob/main/ssm-executescriptdiagram.png)
 1.	AWS Config runs the encrypted-volumes rule to find EBS volumes where the encryption flag is not set.
