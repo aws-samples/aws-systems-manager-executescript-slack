@@ -23,7 +23,7 @@ AWS Config must be enabled in your AWS account for your region, and must monitor
 ### Getting output from aws:executeScript step
 Within the python code:
 
-```yaml
+```python
 return {'message': theMsg }
 ```
 
@@ -46,7 +46,7 @@ InputPayload:
              
 Within the python code, you can reference the variables declared in InputPayload using the <strong>events</strong>:
 
-```yaml
+```python
 events['ebsVolumeId']
 ```
 
