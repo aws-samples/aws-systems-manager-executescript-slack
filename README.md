@@ -27,22 +27,24 @@ Within the python code:
 
 In the <strong>output</strong> section:
 
-`outputs:
-       - Name: ebsInfoMsg
-         Selector: $.Payload.message
+```yaml
+outputs:
+       - Name: ebsInfoMsg        
+         Selector: $.Payload.message         
          Type: String
-`
+```
 
 ### Passing data into python code within aws:executeScript step
 In the <strong>InputPayload<strong> section, declare the variables you need and use double {{ }} to reference parameters:
   
-`InputPayload:
-             ebsVolumeId: '{{ResourceId}}'`
+```yaml
+InputPayload:
+             ebsVolumeId: '{{ResourceId}}' 
+```
              
 Within the python code, you can reference the variables declared in InputPayload using the <strong>events</strong>:
 
-`events['ebsVolumeId']
-`
+`events['ebsVolumeId']`
 
 
 ## Security
