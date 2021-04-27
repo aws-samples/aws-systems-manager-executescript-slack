@@ -19,6 +19,30 @@ For the integration with Slack, follow these instructions to add a Slack Incomin
 
 AWS Config must be enabled in your AWS account for your region, and must monitor at least EC2:Instance and EC2:Volume types. See [Getting Started with AWS Config](https://docs.aws.amazon.com/config/latest/developerguide/getting-started.html) for more info.
 
+## Tips
+### Getting output from aws:executeScript step
+Within the python code:
+
+`return {'message': theMsg }`
+
+In the <strong>output</strong> section:
+
+`outputs:
+       - Name: ebsInfoMsg
+         Selector: $.Payload.message
+         Type: String
+`
+
+### Passing data into python code within aws:executeScript step
+In the <strong>InputPayload<strong> section, declare the variables you need and use double {{ }} to reference parameters:
+  
+`InputPayload:
+             ebsVolumeId: '{{ResourceId}}'`
+             
+Within the python code, you can reference the variables declared in InputPayload using the <strong>events</strong>:
+
+`events['ebsVolumeId']
+`
 
 
 ## Security
