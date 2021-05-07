@@ -50,6 +50,7 @@ Within the python code, you can reference the variables declared in InputPayload
 events['ebsVolumeId']
 ```
 
+For detailed information, please see the accompanying ["Use the power of script steps.." blog post](https://aws.amazon.com/blogs/mt/use-script-steps-in-your-systems-manager-automation-runbooks/)
 
 ## Security
 
